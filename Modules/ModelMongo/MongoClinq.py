@@ -10,6 +10,7 @@ class MongoClinq:
 		logging.debug("Creating Mogno Client")
 
 		try:
+			logging.info("Connecting to Mongod: %s",app.config.dbPath)
 			self.client = MongoClient(app.config.dbPath)
 
 			self.cls = {}
@@ -19,6 +20,11 @@ class MongoClinq:
 			logging.error("%s", e)
 			logging.error("Unable to connect to database %s", moduledir)
 
+		app.dataLayer = self
+
 	def SetupCollections(self):
 		#setup main collection
+		logging.debug("Creating main collection in mongodb")
 		main = self.cls["clinq"] = self.client["clinq_files"]
+
+	
