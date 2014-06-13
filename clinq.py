@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import Lib.ModulLoader as mod
 from Lib.ClinqApp import ClinqApp
 

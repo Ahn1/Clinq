@@ -9,6 +9,10 @@ def LoadModules(mod,app):
 	logging.info("Starting to import modules")
 
 	for folder in os.listdir(top):
+
+		if folder.startswith("__init__"):
+			continue
+
 		moduledir = os.path.join(top,folder)
 		logging.info("Importing module %s",moduledir)
 
@@ -21,7 +25,7 @@ def LoadModules(mod,app):
 
 			modInfo = moduleCode.Info()
 
-			logging.debug("Importing module '%s %s'", modInfo["name"], modInfo["version"])
+			logging.debug("Register module '%s %s'", modInfo["name"], modInfo["version"])
 
 			moduleCode.Register(app)
 
