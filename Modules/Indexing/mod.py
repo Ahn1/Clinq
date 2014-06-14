@@ -2,11 +2,13 @@ import logging
 import hashlib
 import os
 
+from Lib import FileHash
+
 
 def Info():
 	return {
 		"name": "Indexing",
-		"version": "0.1"
+		"version": "0.2"
 	}
 
 def Register(app):
@@ -43,7 +45,7 @@ def RefreshFolderIndex(app,path):
 	for targetFile in files:
 		RefreshFileIndex(app,targetFile)
 
-	childs = app.dataLayer.GetChildsById(hashlib.md5(path).hexdigest())
+	childs = app.dataLayer.GetChildsById(FileHash.GetPathHash(app,path))
 
 	logging.debug("Total length of '%s' is %s Seconds",path, GetCompleteDuration(childs))
 
@@ -68,11 +70,11 @@ def RefreshFileIndex(app,targetFile):
 	handler = app.GetTagHandler(fileExtension)
 
 	parent = os.path.dirname(targetFile)
-	fileTag["parent"] = hashlib.md5(parent).hexdigest()
+	fileTag["parent"] = FileHash.GetPathHash(app,parent)
+
+	fileTag["isFile"] = True
 
 	if handler is not None:
 		handler(targetFile,fileTag)
 
-		fileTag["isFile"] = True
-
-		app.dataLayer.StoreFileById(hashlib.md5(targetFile).hexdigest(), fileTag)
+		app.dataLayer.StoreFileById(FileHash.GetPathHash(app,targetFile), fileTag)
