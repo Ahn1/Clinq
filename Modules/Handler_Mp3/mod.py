@@ -19,12 +19,15 @@ def Register(app):
 	app.RegisterTagHandler(".mp3",handler)
 
 def GetMP3Tag(app,media,target):
-	audio = EasyID3(media)
+	try:
+		audio = EasyID3(media)
 
-	target["title"] = audio["title"]
+		target["title"] = audio["title"]
 
-	audio = MP3(media)
+		audio = MP3(media)
 
-	target["length"] = audio.info.length
+		target["length"] = audio.info.length
 
-	logging.debug("Tag of '%s' refreshed: %s",media,target)
+		logging.debug("Tag of '%s' refreshed: %s",media,target)
+	except Exception,e:
+		logging.error("Cannot get MP3 Tag: %s", e)

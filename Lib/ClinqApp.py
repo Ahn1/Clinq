@@ -66,7 +66,7 @@ class ClinqApp:
 
 		if len(args) > 1:
 			if args[1] in self.commands:
-				logging.debug("Execute command '%s'", args[1])
+				logging.info("Execute command '%s'", args[1])
 				self.commands[args[1]](self,args)
 			else:
 				logging.error("Command not found: %s", args[1])

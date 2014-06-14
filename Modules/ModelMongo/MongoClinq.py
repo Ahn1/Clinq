@@ -39,7 +39,7 @@ class MongoClinq:
 
 		udRes = self.cls["fs"].update({"docid": document["docid"]}, document)
 
-		print udRes
+		logging.debug("Update db result: %s",udRes)
 
 		if not udRes["updatedExisting"]:
 			self.cls["fs"].insert(document)

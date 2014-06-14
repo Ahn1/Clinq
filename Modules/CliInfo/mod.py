@@ -7,7 +7,7 @@ from Lib import FileHash
 def Info():
 	return {
 		"name": "cli_media_info",
-		"version": "0.2",
+		"version": "0.3",
 		"core": True
 	}
 
@@ -27,14 +27,20 @@ def RessourceInfo(app,args):
 
 	logging.info("Get info for '%s'", targeRessource)
 
-	nodes = app.dataLayer.GetChildsById(FileHash.GetPathHash(app, targeRessource))
+	nodes = [x for x in app.dataLayer.GetChildsById(FileHash.GetPathHash(app, targeRessource)) if x is not None]
 
-	nodes.append(GetFileInfo(app, targeRessource))
+	print nodes
 
-	pathLenght = max([len(x["path"]) for x in nodes if "path" in x])
+	currentNode = GetFileInfo(app, targeRessource)
+	if currentNode is not None:
+		nodes.append(currentNode)
+
+	pathLenght = max([len(x["path"]) for x in nodes if ("path" in x)])
 
 	lengths = [ReadableNodeLength(x) for x in nodes]
 	maxLengths = max([len(x) for x in lengths])
+
+
 
 	for i,node in enumerate(nodes):
 		out = ""
@@ -49,17 +55,33 @@ def RessourceInfo(app,args):
 		out += lengths[i].ljust(maxLengths," ")
 
 		print(out)
+
+		logging.debug("Printing info: %s", out)
 		
 
 
 def ReadableNodeLength(node):
 
+	if "length" not in node:
+		return ""
+
 	length = node.get("length")
 
-	minutes = str(int(length / 60)).rjust(2,"0")
-	second = str(int(length % 60)).rjust(2,"0")
+	minutes = int(length / 60)
 
-	return "" + minutes + ":" + second
+	hours = int(minutes / 60)
+
+	minutes = str(minutes - (hours * 60)).rjust(2,"0")
+
+	hours = str(hours).rjust(2,"0")
+
+	second = str(int(length % 60)).rjust(2,"0")
+	
+	res = "" + hours + ":" + minutes + ":" + second
+
+	logging.debug("Get length: %s", res)
+
+	return res
 
 def GetFileInfo(app,path):
 	return app.dataLayer.GetFileById(FileHash.GetPathHash(app,path))

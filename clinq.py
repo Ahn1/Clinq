@@ -1,15 +1,18 @@
 #!/usr/bin/env python
 
+import os
+import __main__ as main
 import Lib.ModulLoader as mod
 from Lib.ClinqApp import ClinqApp
 
 import logging
 
+scriptDir = os.path.dirname(os.path.realpath(main.__file__))
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s',
                     datefmt='%m-%d %H:%M',
-                    filename='clinq.log',
+                    filename=os.path.join(scriptDir ,'clinq.log'),
                     filemode='w')
 # define a Handler which writes INFO messages or higher to the sys.stderr
 console = logging.StreamHandler()
