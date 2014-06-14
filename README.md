@@ -9,6 +9,8 @@ Key Features
 * Optimized run with multiple media servers
 * modularization allows multiple ways to use
 * Work perfectly with mountet folders eg. via sftp
+* Support node based imcluding of other Clinq instances
+* Web interface for browsing media
 
 Installation
 ============
