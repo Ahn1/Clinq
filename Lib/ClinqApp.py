@@ -1,7 +1,12 @@
 import logging
 import sys
 import imp
+import os
+
 from event import Event
+
+import __main__ as main
+
 
 class ClinqApp:
 	def __init__(self):
@@ -17,7 +22,7 @@ class ClinqApp:
 
 		try:
 			logging.info("Load config file")
-			self.config = imp.load_source("config", "./config.py")
+			self.config = imp.load_source("config",os.path.join(os.path.dirname(os.path.realpath(main.__file__)),"./config.py"))
 		except Exception, e:
 			logging.error("%s", e)
 			logging.error("Cannot load config file")

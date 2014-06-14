@@ -4,7 +4,7 @@ import os
 
 def Info():
 	return {
-		"name": "Ensure Folder",
+		"name": "ensure_folder",
 		"version": "0.1",
 		"core": True
 	}
