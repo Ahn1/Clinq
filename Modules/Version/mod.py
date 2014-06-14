@@ -13,7 +13,7 @@ def Register(app):
 def Run(app,params):
 	info = {
 		"AppName": "Clinq",
-		"Version": "0.1"
+		"Version": "0.2"
 	}
 
 

@@ -1,0 +1,265 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ma",
+				"maxLengths"
+			],
+			[
+				"le",
+				"lengths"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"path",
+				"pathLenght"
+			],
+			[
+				"pa",
+				"path"
+			],
+			[
+				"N",
+				"nodes"
+			],
+			[
+				"do",
+				"docid"
+			],
+			[
+				"mod",
+				"modInfo"
+			],
+			[
+				"ch",
+				"child"
+			],
+			[
+				"doc",
+				"document"
+			],
+			[
+				"data",
+				"dataLayer"
+			],
+			[
+				"Re",
+				"RefreshFolderIndex"
+			],
+			[
+				"app",
+				"appcommands"
+			],
+			[
+				"Mon",
+				"MongoClinq"
+			],
+			[
+				"de",
+				"debug"
+			],
+			[
+				"im",
+				"import"
+			],
+			[
+				"ar",
+				"args"
+			],
+			[
+				"modu",
+				"moduledir"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Run Clinq",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Version/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/project.sublime-project",
+		"/home/alex/Dokumente/Entwicklung/Clinq/clinq.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Handler_Mp3/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/requirements.txt",
+		"/home/alex/Dokumente/Entwicklung/Clinq/clinq.log",
+		"/home/alex/Dokumente/Entwicklung/Clinq/README.md",
+		"/home/alex/Dokumente/Entwicklung/Clinq/config.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/CliInfo/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/ModelMongo/MongoClinq.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Lib/ClinqApp.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Lib/ModulLoader.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/ModelMongo/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Indexing/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Lib/FileHash.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/EnsureFolder/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/CliInfo/__init__.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/out.txt",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Handler_Mp3/__init__.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Handler_Mp3/__init__.ps",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/EnsureFolder/__init__.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/__init__.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/IndexingCli/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/IndexingCli/__init__.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Indexing/__init__.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/setup.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/ModelMongo/a.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/ModelMongo/__init__.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Lib/event.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Lib/__init__.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/example.log",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Version/__init__.py",
+		"/home/alex/.config/sublime-text-3/Packages/User/pythonRun.sublime-build",
+		"/home/alex/Dokumente/Entwicklung/Clinq/build.py"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"MongoClinq.py"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 243.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

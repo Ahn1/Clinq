@@ -2,6 +2,7 @@ import logging
 import os
 from mutagen.easyid3 import EasyID3
 from mutagen.mp3 import MP3
+from mutagen.id3 import ID3
 
 
 def Info():
@@ -20,11 +21,19 @@ def Register(app):
 
 def GetMP3Tag(app,media,target):
 	try:
+
+		#audio = ID3(media)
+
+		#print '---------------'
+		#print audio.pprint()
+
 		audio = EasyID3(media)
 
 		target["title"] = audio["title"]
 
 		audio = MP3(media)
+
+
 
 		target["length"] = audio.info.length
 

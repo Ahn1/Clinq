@@ -1,0 +1,21 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "."
+		}
+	],
+	"build_systems":
+    [
+        {
+            "name": "Run Clinq",
+            "shell_cmd": "python clinq.py version",
+            "working_dir": "/home/alex/Dokumente/Entwicklung/Clinq"
+
+
+            /*"shell_cmd": "/home/alex/Dokumente/Entwicklung/Clinq/clinq.py indexing",
+            "working_dir": "/home/alex/fusessh/Jukebox"*/
+        }
+    ]
+}
