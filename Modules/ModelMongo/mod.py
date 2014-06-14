@@ -7,7 +7,7 @@ from Modules.ModelMongo.MongoClinq import MongoClinq
 def Info():
 	return {
 		"name": "backend_mongo",
-		"version": "0.1"
+		"version": "0.4"
 	}
 
 def Register(app):

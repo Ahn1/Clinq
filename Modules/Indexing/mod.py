@@ -59,6 +59,9 @@ def RefreshFolderIndex(app,path):
 	#Set title to Folder name
 	dirTag["title"] = os.path.relpath(path,parent)
 
+	# Set path
+	dirTag["path"] = FileHash.GetRelPath(app,path)
+
 	app.dataLayer.StoreFileById(FileHash.GetPathHash(app,path), dirTag)
 		
 
@@ -86,6 +89,9 @@ def RefreshFileIndex(app,targetFile):
 	fileTag["parent"] = FileHash.GetPathHash(app,parent)
 
 	fileTag["isFile"] = True
+
+	# Set path
+	fileTag["path"] = FileHash.GetRelPath(app,targetFile)
 
 	if handler is not None:
 		handler["UpdateTag"](app,targetFile,fileTag)

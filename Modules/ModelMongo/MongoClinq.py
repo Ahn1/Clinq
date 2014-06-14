@@ -45,6 +45,9 @@ class MongoClinq:
 			self.cls["fs"].insert(document)
 
 
+	def GetFileById(self, docId):
+		return self.cls["fs"].find_one({"docid": docId})
+
 	def GetChildsById(self, id):
 
 		searchObj = {"parent": id}

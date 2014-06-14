@@ -11,3 +11,9 @@ def GetPathHash(app,path):
 	logging.debug("Generating hash from '%s': '%s'", path, pathHash)
 
 	return pathHash
+
+def GetRelPath(app,path):
+	if path.startswith(app.config.datadir):
+		path = path[len(app.config.datadir):]
+
+	return path
