@@ -6,7 +6,7 @@ from Modules.ModelMongo.MongoClinq import MongoClinq
 
 def Info():
 	return {
-		"name": "Mongo DB Backend",
+		"name": "backend_mongo",
 		"version": "0.1"
 	}
 

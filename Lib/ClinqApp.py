@@ -18,7 +18,8 @@ class ClinqApp:
 		try:
 			logging.info("Load config file")
 			self.config = imp.load_source("config", "./config.py")
-		except:
+		except Exception, e:
+			logging.error("%s", e)
 			logging.error("Cannot load config file")
 			
 

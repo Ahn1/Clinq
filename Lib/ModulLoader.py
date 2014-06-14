@@ -25,9 +25,14 @@ def LoadModules(mod,app):
 
 			modInfo = moduleCode.Info()
 
-			logging.debug("Register module '%s %s'", modInfo["name"], modInfo["version"])
+			if ("core" in modInfo and modInfo["core"] == True) or (modInfo["name"] in app.config.modules):
 
-			moduleCode.Register(app)
+				logging.debug("Register module '%s %s'", modInfo["name"], modInfo["version"])
+
+				moduleCode.Register(app)
+
+			else:
+				logging.debug("Skip module %s", modInfo["name"])
 
 		except Exception, e:
 			logging.error("%s", e)

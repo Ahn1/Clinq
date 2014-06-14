@@ -7,8 +7,8 @@ from Lib import FileHash
 
 def Info():
 	return {
-		"name": "Indexing",
-		"version": "0.2"
+		"name": "indexing",
+		"version": "0.2",
 	}
 
 def Register(app):

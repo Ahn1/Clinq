@@ -6,7 +6,7 @@ from mutagen.mp3 import MP3
 
 def Info():
 	return {
-		"name": "MP3 Tag Handler",
+		"name": "handler_mp3",
 		"version": "0.1"
 	}
 
