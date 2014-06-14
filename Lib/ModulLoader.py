@@ -1,10 +1,17 @@
 import imp
-import os
+import inspect, os
 import logging
+
+import __main__ as main
 
 
 def LoadModules(mod,app):
-	top = "./Modules"
+
+	scriptDir = os.path.dirname(os.path.realpath(main.__file__))
+
+	logging.debug("SCRIPT DIR: %s", scriptDir)
+
+	top = os.path.join(scriptDir,"Modules")
 
 	logging.info("Starting to import modules")
 

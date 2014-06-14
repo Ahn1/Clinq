@@ -8,7 +8,7 @@ from Lib import FileHash
 def Info():
 	return {
 		"name": "indexing",
-		"version": "0.2",
+		"version": "0.3",
 	}
 
 def Register(app):
@@ -45,11 +45,24 @@ def RefreshFolderIndex(app,path):
 	for targetFile in files:
 		RefreshFileIndex(app,targetFile)
 
+
+	dirTag = {}
+
 	childs = app.dataLayer.GetChildsById(FileHash.GetPathHash(app,path))
+	dirTag["length"] = GetCompleteDuration(childs)
 
-	logging.debug("Total length of '%s' is %s Seconds",path, GetCompleteDuration(childs))
+	parent = os.path.dirname(path)
 
-	
+	if path != app.config.datadir:
+		dirTag["parent"] = FileHash.GetPathHash(app,parent)
+
+	#Set title to Folder name
+	dirTag["title"] = os.path.relpath(path,parent)
+
+	app.dataLayer.StoreFileById(FileHash.GetPathHash(app,path), dirTag)
+		
+
+
 def GetCompleteDuration(childs):
 	sumDur = 0.0
 
@@ -75,6 +88,6 @@ def RefreshFileIndex(app,targetFile):
 	fileTag["isFile"] = True
 
 	if handler is not None:
-		handler(targetFile,fileTag)
+		handler["UpdateTag"](app,targetFile,fileTag)
 
 		app.dataLayer.StoreFileById(FileHash.GetPathHash(app,targetFile), fileTag)

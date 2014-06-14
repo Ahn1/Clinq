@@ -11,13 +11,17 @@ def Info():
 	}
 
 def Register(app):
-	app.RegisterTagHandler(".mp3",GetMP3Tag)
 
-def GetMP3Tag(media,target):
+	handler = {
+		"UpdateTag": GetMP3Tag
+	}
+
+	app.RegisterTagHandler(".mp3",handler)
+
+def GetMP3Tag(app,media,target):
 	audio = EasyID3(media)
 
 	target["title"] = audio["title"]
-
 
 	audio = MP3(media)
 
