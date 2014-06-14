@@ -3,6 +3,13 @@ Clinq
 
 Clinq is a modular browser for media files written in python.
 
+
+Key Features
+============
+* Optimized run with multiple media servers
+* modularization allows multiple ways to use
+* Work perfectly with mountet folders eg. via sftp
+
 Installation
 ============
 
@@ -17,7 +24,6 @@ cd Clinq
 Then install the system Requirements:
 ```
 sudo apt-get install python python-pip
-
 ```
 
 
