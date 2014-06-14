@@ -3,7 +3,7 @@ import logging
 def Info():
 	return {
 		"name": "version",
-		"version": "0.1",
+		"version": "0.2",
 		"core": True
 	}
 
