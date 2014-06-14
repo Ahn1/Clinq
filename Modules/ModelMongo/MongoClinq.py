@@ -27,4 +27,3 @@ class MongoClinq:
 		logging.debug("Creating main collection in mongodb")
 		main = self.cls["clinq"] = self.client["clinq_files"]
 
-	
