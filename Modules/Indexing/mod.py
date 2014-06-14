@@ -1,4 +1,5 @@
 import logging
+import hashlib
 import os
 
 
@@ -40,8 +41,38 @@ def RefreshFolderIndex(app,path):
 		RefreshFolderIndex(app,subdir)
 
 	for targetFile in files:
-		logging.debug("Handling file %s", targetFile)
+		RefreshFileIndex(app,targetFile)
 
-		fileName, fileExtension = os.path.splitext(targetFile)
+	childs = app.dataLayer.GetChildsById(hashlib.md5(path).hexdigest())
 
-		handler = app.GetTagHandler(fileExtension)
+	logging.debug("Total length of '%s' is %s Seconds",path, GetCompleteDuration(childs))
+
+	
+def GetCompleteDuration(childs):
+	sumDur = 0.0
+
+	for child in childs:
+		if "length" in child:
+			sumDur += child["length"]
+
+	return sumDur
+		
+
+def RefreshFileIndex(app,targetFile):
+	logging.debug("Handling file %s", targetFile)
+
+	fileName, fileExtension = os.path.splitext(targetFile)
+
+	fileTag = {}
+
+	handler = app.GetTagHandler(fileExtension)
+
+	parent = os.path.dirname(targetFile)
+	fileTag["parent"] = hashlib.md5(parent).hexdigest()
+
+	if handler is not None:
+		handler(targetFile,fileTag)
+
+		fileTag["isFile"] = True
+
+		app.dataLayer.StoreFileById(hashlib.md5(targetFile).hexdigest(), fileTag)

@@ -15,5 +15,3 @@ def Register(app):
 	db = MongoClinq()
 
 	app.OnStartup += db.AppStartUp
-
-	import Modules.ModelMongo.MongoClinq
