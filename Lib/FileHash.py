@@ -8,7 +8,7 @@ def GetPathHash(app,path):
 
 	pathHash = hashlib.md5(path).hexdigest()
 
-	logging.debug("Generating hash from '%s': '%s'", path, pathHash)
+	#logging.debug("Generating hash from '%s': '%s'", path, pathHash)
 
 	return pathHash
 

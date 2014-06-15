@@ -8,7 +8,7 @@ from Lib import FileHash
 def Info():
 	return {
 		"name": "indexing",
-		"version": "0.3",
+		"version": "1.0",
 	}
 
 def Register(app):
@@ -50,6 +50,7 @@ def RefreshFolderIndex(app,path):
 
 	childs = app.dataLayer.GetChildsById(FileHash.GetPathHash(app,path))
 	dirTag["length"] = GetCompleteDuration(childs)
+	dirTag["filesize"] = GetCompleteFileSize(childs)
 
 	parent = os.path.dirname(path)
 
@@ -74,26 +75,54 @@ def GetCompleteDuration(childs):
 			sumDur += child["length"]
 
 	return sumDur
+
+def GetCompleteFileSize(childs):
+	return sum([x["filesize"] for x in childs if "filesize" in x])
 		
 
 def RefreshFileIndex(app,targetFile):
 	logging.debug("Handling file %s", targetFile)
 
-	fileName, fileExtension = os.path.splitext(targetFile)
+	relTargetFile = FileHash.GetRelPath(app,targetFile)
+
+	fileHash = FileHash.GetPathHash(app,relTargetFile)
+
+	# Get file database, if exists
+	storedDoc = app.dataLayer.GetFileById(fileHash)
+
+	# get file system info for file
+	fileInfo = os.stat(targetFile)
+
+	logging.debug("Trying to get stored file: %s", storedDoc)
+
+	# exit if file has not changed
+	if storedDoc is not None:
+		if "modified" in storedDoc:
+			if storedDoc["modified"] == fileInfo.st_mtime:
+				logging.debug("Skip file '%s', because it hasn't changed", relTargetFile)
+				return
+
+	# get file names
+	fileName, fileExtension = os.path.splitext(relTargetFile)
 
 	fileTag = {}
 
+	fileTag["modified"] = fileInfo.st_mtime
+	fileTag["filesize"] = fileInfo.st_size 
+
+	# Get a handler for reading tags
 	handler = app.GetTagHandler(fileExtension)
 
-	parent = os.path.dirname(targetFile)
+	parent = os.path.dirname(relTargetFile)
 	fileTag["parent"] = FileHash.GetPathHash(app,parent)
 
 	fileTag["isFile"] = True
 
 	# Set path
-	fileTag["path"] = FileHash.GetRelPath(app,targetFile)
+	fileTag["path"] = relTargetFile
 
+	# Updating document
 	if handler is not None:
-		handler["UpdateTag"](app,targetFile,fileTag)
+		handler["UpdateTag"](app,relTargetFile,fileTag)
 
-		app.dataLayer.StoreFileById(FileHash.GetPathHash(app,targetFile), fileTag)
+	app.dataLayer.StoreFileById(fileHash, fileTag)

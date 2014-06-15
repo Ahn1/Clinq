@@ -46,7 +46,12 @@ class MongoClinq:
 
 
 	def GetFileById(self, docId):
-		return self.cls["fs"].find_one({"docid": docId})
+
+		queryObj = {"docid": docId}
+
+		logging.debug("Searching in db for: %s", queryObj)
+
+		return self.cls["fs"].find_one(queryObj)
 
 	def GetChildsById(self, id):
 
