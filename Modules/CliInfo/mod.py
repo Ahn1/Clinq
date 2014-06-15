@@ -29,18 +29,20 @@ def RessourceInfo(app,args):
 
 	nodes = [x for x in app.dataLayer.GetChildsById(FileHash.GetPathHash(app, targeRessource)) if x is not None]
 
-	print nodes
-
 	currentNode = GetFileInfo(app, targeRessource)
 	if currentNode is not None:
 		nodes.append(currentNode)
 
 	pathLenght = max([len(x["path"]) for x in nodes if ("path" in x)])
 
-	lengths = [ReadableNodeLength(x) for x in nodes]
-	maxLengths = max([len(x) for x in lengths])
+	for node in nodes:
+		node["ReadableNodeLength"] = ReadableNodeLength(node)
+		node["ReadableFileSize"] = ReadableFileSize(node)
 
+	maxReadableLengthLength = max([len(x["ReadableNodeLength"]) for x in nodes])
+	maxFileSizeLength = max([len(x["ReadableFileSize"]) for x in nodes])
 
+	nodes = sorted(nodes, key=lambda k: k['filesize'])
 
 	for i,node in enumerate(nodes):
 		out = ""
@@ -52,12 +54,30 @@ def RessourceInfo(app,args):
 
 		out += path.ljust(pathLenght + 2, " ")
 
-		out += lengths[i].ljust(maxLengths," ")
+		out += node["ReadableNodeLength"].ljust(maxReadableLengthLength + 2," ")
+
+		out += node["ReadableFileSize"].rjust(maxFileSizeLength + 2," ")
 
 		print(out)
 
-		logging.debug("Printing info: %s", out)
+		#logging.debug("Printing info: %s", out)
 		
+
+def ReadableFileSize(node):
+	if "filesize" not in node:
+		return ""
+
+	currentSize = float(node["filesize"])
+
+	prefixes = ['','k','m','g','t']
+	pot = 0
+
+	while currentSize > 1024:
+		pot += 1
+		currentSize = currentSize / 1024
+
+	return str(int(currentSize)) + " " + prefixes[pot] + "B"
+
 
 
 def ReadableNodeLength(node):
@@ -85,3 +105,4 @@ def ReadableNodeLength(node):
 
 def GetFileInfo(app,path):
 	return app.dataLayer.GetFileById(FileHash.GetPathHash(app,path))
+
