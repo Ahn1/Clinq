@@ -54,7 +54,7 @@ def RessourceInfo(app,args):
 
 		out += path.ljust(pathLenght + 2, " ")
 
-		out += node["ReadableNodeLength"].ljust(maxReadableLengthLength + 2," ")
+		out += node["ReadableNodeLength"].rjust(maxReadableLengthLength + 2," ")
 
 		out += node["ReadableFileSize"].rjust(maxFileSizeLength + 2," ")
 

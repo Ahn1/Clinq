@@ -12,11 +12,13 @@
             "name": "Run Clinq",
             
             //"shell_cmd": "python clinq.py version",
-            //"working_dir": "/home/alex/Dokumente/Entwicklung/Clinq"
+            //"working_dir": "/home/alex/Dokumente/Entwicklung/Clinq",
 
-
-            "shell_cmd": "/home/alex/Dokumente/Entwicklung/Clinq/clinq.py indexing",
+            "shell_cmd": "/home/alex/Dokumente/Entwicklung/Clinq/clinq.py server",
             "working_dir": "/home/alex/fusessh/Jukebox"
+
+            //"shell_cmd": "/home/alex/Dokumente/Entwicklung/Clinq/clinq.py indexing",
+            //"working_dir": "/home/alex/fusessh/Jukebox"
         }
     ]
 }

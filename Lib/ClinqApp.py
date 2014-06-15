@@ -14,6 +14,8 @@ class ClinqApp:
 
 		self.commands = {}
 		self.appcommands = {}
+		self.appComponents = {}
+
 		self.tagHandler = {}
 
 		self.dataLayer = None
@@ -27,6 +29,18 @@ class ClinqApp:
 			logging.error("%s", e)
 			logging.error("Cannot load config file")
 			
+	def SetAppComponent(self, name, data):
+		self.appComponents[name] = data
+
+	def GetAppComponent(self, name):
+
+		if name in self.appComponents:
+			return self.appComponents[name]
+
+		logging.warning("Requested app '%s' component not found",name)
+
+		return None
+
 
 	def RegisterCommand(self,cmd,func):
 		logging.debug("Registered command: %s", cmd)
