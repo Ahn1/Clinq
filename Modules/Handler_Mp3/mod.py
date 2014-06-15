@@ -33,10 +33,9 @@ def GetMP3Tag(app,media,target):
 
 		audio = MP3(media)
 
-
-
 		target["length"] = audio.info.length
 
 		logging.debug("Tag of '%s' refreshed: %s",media,target)
+		
 	except Exception,e:
 		logging.error("Cannot get MP3 Tag: %s", e)

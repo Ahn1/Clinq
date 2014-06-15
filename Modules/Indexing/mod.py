@@ -123,6 +123,6 @@ def RefreshFileIndex(app,targetFile):
 
 	# Updating document
 	if handler is not None:
-		handler["UpdateTag"](app,relTargetFile,fileTag)
+		handler["UpdateTag"](app,targetFile,fileTag)
 
 	app.dataLayer.StoreFileById(fileHash, fileTag)
