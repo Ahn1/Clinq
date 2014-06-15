@@ -22,9 +22,15 @@ class ClinqApp:
 
 		self.OnStartup = Event()
 
+		
+
 		try:
 			logging.info("Load config file")
 			self.config = imp.load_source("config",os.path.join(os.path.dirname(os.path.realpath(main.__file__)),"./config.py"))
+
+			if not os.path.exists(self.config.tmpDir):
+				logging.info("Creating tmp dir '%s'", self.config.tmpDir)
+				os.makedirs(self.config.tmpDir)
 		except Exception, e:
 			logging.error("%s", e)
 			logging.error("Cannot load config file")

@@ -3,11 +3,11 @@
 dbPath = "mongodb://localhost:27017/"
 dbname = "clinq"
 
-# Set the data dir
+# Set the data dir, where clinq will search for media
 datadir = "/home/alex/fusessh"
 
-# Set Indexing dir
-IndexDir = "/tmp/clinq"
+
+tmpDir = "/tmp/clinq"
 
 
 modules = [
@@ -16,5 +16,5 @@ modules = [
 
 	"handler_mp3",
 
-	"web-core"
+	"web-core", "web-main"
 ]
