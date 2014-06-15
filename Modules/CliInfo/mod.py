@@ -7,7 +7,7 @@ from Lib import FileHash
 def Info():
 	return {
 		"name": "cli_media_info",
-		"version": "0.3",
+		"version": "0.4",
 		"core": True
 	}
 

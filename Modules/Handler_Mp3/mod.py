@@ -22,14 +22,18 @@ def Register(app):
 def GetMP3Tag(app,media,target):
 	try:
 
-		#audio = ID3(media)
+		audio = ID3(media)
 
-		#print '---------------'
-		#print audio.pprint()
+		title = GetContentOfTag(audio.getall('TIT2'))
+		artist = GetContentOfTag(audio.getall('TPE1'))
+		album = GetContentOfTag(audio.getall('TALB'))
+		track = GetContentOfTag(audio.getall('TRCK'))
 
-		audio = EasyID3(media)
+		target["title"] = title
+		target["artist"] = artist
+		target["album"] = album
+		target["track"] = track
 
-		target["title"] = audio["title"]
 
 		audio = MP3(media)
 
@@ -39,3 +43,16 @@ def GetMP3Tag(app,media,target):
 		
 	except Exception,e:
 		logging.error("Cannot get MP3 Tag: %s", e)
+
+
+def GetContentOfTag(tags):
+	try:
+		return get_first([getattr(x,"text") for x in tags])
+	except Exception, e:
+		return [""]
+
+def get_first(iterable, default=None):
+    if iterable:
+        for item in iterable:
+            return item
+    return default
