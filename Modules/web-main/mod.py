@@ -36,6 +36,9 @@ def ServerStarted(app, args):
 	app.GetAppComponent("WebFileManager").AddFolder("webmain",webFile)
 	logging.info("Copied '%s' to webserver filemanager", webFile)
 
+
+	app.GetAppComponent("WebFileManager").AddFile("",os.path.join(scriptDir,"web/template.html"))
+
 	flask = app.GetAppComponent("server")
 
 	@flask.route("/")

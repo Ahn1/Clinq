@@ -32,7 +32,12 @@ class WebFileManager:
 		shutil.copytree(sourcePath, joinedTarget)
 
 	def AddFile(self,targetPath ,sourcePath):
-		pass
+		
+		joinedTarget = os.path.join(self.dir, targetPath)
+
+		logging.debug("Try to copy '%s' to '%s'", sourcePath, joinedTarget)
+
+		shutil.copy(sourcePath, joinedTarget)
 
 	def GetPath(self, targetPath):
 		return os.path.join(self.dir, targetPath)
