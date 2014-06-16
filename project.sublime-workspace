@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"scr",
+				"scriptDir"
+			],
+			[
+				"sta",
+				"staticFolder"
+			],
+			[
+				"stat",
+				"staticsFolder"
+			],
+			[
 				"Get",
 				"GetAppComponent"
 			],
@@ -111,6 +123,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Modules/web-main/mod.py",
+			"settings":
+			{
+				"buffer_size": 1000,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Run Clinq",
 	"command_palette":
@@ -139,18 +159,24 @@
 	},
 	"file_history":
 	[
-		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-modinfo/web/header.html",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-modinfo/web/templates/modinfo.html",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/web/template.html",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-modinfo/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Webcore/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Lib/event.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/config.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-modinfo/__init__.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/web/webmain/index.html",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/web/static/bootstrap/css/bootstrap.min.css",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/web/static/Glyphicon/css/glyph.css",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Webcore/WebFileManager.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/project.sublime-project",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Handler_Mp3/mod.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Handler_Mp3/__init__.py",
-		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Webcore/mod.py",
-		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/web/webmain/index.html",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Indexing/mod.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Lib/ClinqApp.py",
-		"/home/alex/Dokumente/Entwicklung/Clinq/config.py",
-		"/home/alex/Dokumente/Entwicklung/Clinq/Lib/event.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/__init__.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Webcore/__init__.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/CliInfo/mod.py",
@@ -199,6 +225,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"glyphicon",
 			"MongoClinq.py"
 		],
 		"highlight": true,
@@ -217,8 +244,38 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Modules/web-main/mod.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1000,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								997,
+								997
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 185.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -255,7 +312,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 223.0
+		"height": 266.0
 	},
 	"output.find_results":
 	{
@@ -298,7 +355,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 314.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -18,11 +18,19 @@
 	<body class="metro">
 		<nav class="navigation-bar">
 			<nav class="navigation-bar-content">
-				<item class="element"><span class="glyphicon glyphicon-headphones"></span> Cinq</item>
+				<item class="element"><span class="glyphicon glyphicon-headphones"></span> Clinq</item>
 				<item class="element-divider"></item>
 
 				<a class="element" href="/">Home</a>
+
+				{% autoescape off%} 
+				{% for menuTemplate in webparam.menuTemplates %}
+					{{ menuTemplate }}
+				{% endfor %}
+				{% endautoescape %}
+
 			</nav>
+
 		</nav>
 
 		{% block content %}{% endblock %}
