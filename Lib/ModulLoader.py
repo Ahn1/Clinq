@@ -4,6 +4,7 @@ import logging
 
 import __main__ as main
 
+activeModules = []
 
 def LoadModules(mod,app):
 
@@ -38,12 +39,21 @@ def LoadModules(mod,app):
 
 				moduleCode.Register(app)
 
+				activeModules.append(modInfo)
+
 			else:
 				logging.debug("Skip module %s", modInfo["name"])
 
 		except Exception, e:
 			logging.error("%s", e)
 			logging.error("Cannot load module %s", moduledir)
+
+
+	app.RegisterAppCommand("GetActiveModules",GetActiveModules)
+
+def GetActiveModules():
+	return activeModules
+
 
 def load_from_file(filepath):
 	class_inst = None

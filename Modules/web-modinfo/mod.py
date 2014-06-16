@@ -7,7 +7,7 @@ from flask import Flask, render_template, make_response
 def Info():
 	return {
 		"name": "web-modinfo",
-		"version": "0.1",
+		"version": "0.2",
 		"core": False
 	}
 
@@ -56,4 +56,9 @@ def RegisterModInfo(app, args):
 
 	@flask.route("/modinfo")
 	def ShowModInfoPage():
-		return render_template("modinfo/modinfo.html",webparam=app.appcommands["GetWebTemplateParameter"](app))
+
+		modulInfos = app.appcommands["GetActiveModules"]()
+		modulInfos = sorted(modulInfos, key=lambda k: k['name'])
+
+
+		return render_template("modinfo/modinfo.html",webparam=app.appcommands["GetWebTemplateParameter"](app), modInfos=modulInfos)

@@ -16,6 +16,15 @@
 				</tr>
 			</thead>
 
+			{% autoescape off%} 
+			{% for modInfo in modInfos %}
+				<tr>
+					<td>{{ modInfo.name }}</td>
+					<td>{{ modInfo.version }}</td>
+				</tr>
+			{% endfor %}
+			{% endautoescape %}
+
 		</table>
 	</div>
 	<div class="col-md-2"></div>
