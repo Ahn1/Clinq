@@ -19,10 +19,11 @@ def Register(app):
 
 
 	templateFolder = app.GetAppComponent("WebFileManager").GetPath("")
+	staticFolder = app.GetAppComponent("WebFileManager").GetStaticPath("")
 
-	logging.debug("Init flask with template folder '%s'", templateFolder)
+	logging.debug("Init flask with template folder '%s' and static folder '%s'", templateFolder,staticFolder)
 
-	flask = Flask(__name__,template_folder=templateFolder)
+	flask = Flask(__name__,template_folder=templateFolder,static_url_path="/static",static_folder=staticFolder)
 	
 	@flask.route("/corestatus")
 	def hello():

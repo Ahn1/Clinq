@@ -29,13 +29,15 @@ def ServerStarted(app, args):
 	# Get directory of current module
 	scriptDir = os.path.dirname(__file__)
 
-	# Get directory of required template files
-	webFile = os.path.join(scriptDir,"web/webmain")
+	# Get directories of required  files
+	webFolder = os.path.join(scriptDir,"web/webmain")
+	staticsFolder = os.path.join(scriptDir,"web/static")
 
 	# Copy template files of mudole to the server
-	app.GetAppComponent("WebFileManager").AddFolder("webmain",webFile)
-	logging.info("Copied '%s' to webserver filemanager", webFile)
+	app.GetAppComponent("WebFileManager").AddFolder("webmain",webFolder)
+	logging.info("Copied '%s' to webserver filemanager", webFolder)
 
+	app.GetAppComponent("WebFileManager").AddFolderStatic("webmain",staticsFolder)
 
 	app.GetAppComponent("WebFileManager").AddFile("",os.path.join(scriptDir,"web/template.html"))
 

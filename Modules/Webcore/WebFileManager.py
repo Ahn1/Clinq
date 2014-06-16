@@ -9,11 +9,13 @@ class WebFileManager:
 
 		self.app = app
 		self.dir = os.path.join(app.config.tmpDir, "webserver")
+		self.staticdir = os.path.join(app.config.tmpDir, "webserver-static")
 
 		logging.debug("Create Web File manager on '%s'", self.dir)
 
 		try:
 			shutil.rmtree(self.dir)
+			shutil.rmtree(self.staticdir)
 		except Exception, e:
 			pass
 		
@@ -22,9 +24,11 @@ class WebFileManager:
 				logging.info("Creating web dir '%s'", self.dir)
 				os.makedirs(self.dir)
 
+		if not os.path.exists(self.staticdir):
+				logging.info("Creating web static dir '%s'", self.staticdir)
+				os.makedirs(self.staticdir)
+
 	def AddFolder(self, targetPath ,sourcePath):
-
-
 		joinedTarget = os.path.join(self.dir, targetPath)
 
 		logging.debug("Try to copy '%s' to '%s'", sourcePath, joinedTarget)
@@ -39,5 +43,16 @@ class WebFileManager:
 
 		shutil.copy(sourcePath, joinedTarget)
 
+
+	def AddFolderStatic(self, targetPath ,sourcePath):
+		joinedTarget = os.path.join(self.staticdir, targetPath)
+
+		logging.debug("Try to copy '%s' to '%s'", sourcePath, joinedTarget)
+
+		shutil.copytree(sourcePath, joinedTarget)
+
 	def GetPath(self, targetPath):
 		return os.path.join(self.dir, targetPath)
+
+	def GetStaticPath(self, targetPath):
+		return os.path.join(self.staticdir, targetPath)
