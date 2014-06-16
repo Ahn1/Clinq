@@ -103,6 +103,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Modules/web-main/mod.py",
+			"settings":
+			{
+				"buffer_size": 365,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Run Clinq",
 	"command_palette":
@@ -132,9 +140,15 @@
 	"file_history":
 	[
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Webcore/mod.py",
-		"/home/alex/Dokumente/Entwicklung/Clinq/Lib/ClinqApp.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/web/webmain/index.html",
 		"/home/alex/Dokumente/Entwicklung/Clinq/project.sublime-project",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Webcore/WebFileManager.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Indexing/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Lib/ClinqApp.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/config.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Lib/event.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/__init__.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Webcore/__init__.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/CliInfo/mod.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/config.pyc",
@@ -143,9 +157,7 @@
 		"/home/alex/Dokumente/Entwicklung/Clinq/clinq.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Indexing/__init__.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/README.md",
-		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Indexing/mod.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/LICENSE",
-		"/home/alex/Dokumente/Entwicklung/Clinq/Lib/event.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/ModelMongo/MongoClinq.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Lib/FileHash.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Version/mod.py",
@@ -172,7 +184,7 @@
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -204,8 +216,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Modules/web-main/mod.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 365,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								248,
+								248
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

@@ -22,7 +22,6 @@ def StartCompleteIndexing(app,args):
 	logging.info("Start complete index refresh for %s", app.config.datadir)
 
 	app.appcommands["EnsureFolder"](app.config.datadir)
-	app.appcommands["EnsureFolder"](app.config.IndexDir)
 
 	RefreshFolderIndex(app,app.config.datadir)
 
