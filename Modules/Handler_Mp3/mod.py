@@ -52,7 +52,7 @@ def GetContentOfTag(tags):
 		return [""]
 
 def get_first(iterable, default=None):
-    if iterable:
-        for item in iterable:
-            return item
-    return default
+	if iterable:
+		for item in iterable:
+			return item
+	return default

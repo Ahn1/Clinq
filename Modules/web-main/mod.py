@@ -23,8 +23,6 @@ def Register(app):
 
 
 
-	
-
 
 def ServerStarted(app, args):
 
@@ -36,6 +34,7 @@ def ServerStarted(app, args):
 
 	# Copy template files of mudole to the server
 	app.GetAppComponent("WebFileManager").AddFolder("webmain",webFile)
+	logging.info("Copied '%s' to webserver filemanager", webFile)
 
 	flask = app.GetAppComponent("server")
 
