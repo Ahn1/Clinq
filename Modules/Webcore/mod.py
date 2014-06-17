@@ -46,4 +46,4 @@ def RunServer(app,args):
 	
 	server = app.GetAppComponent("server")
 
-	server.run()
+	server.run(host='0.0.0.0')
