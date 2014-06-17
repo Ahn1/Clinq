@@ -39,7 +39,6 @@ def RegisterModInfo(app, args):
 
 	# Get directories of required  files
 	webFolder = os.path.join(webModinfoScriptDir,"web/templates")
-	staticsFolder = os.path.join(webModinfoScriptDir,"web/static")
 
 	# Copy template files of mudole to the server
 	app.GetAppComponent("WebFileManager").AddFolder("modinfo",webFolder)
