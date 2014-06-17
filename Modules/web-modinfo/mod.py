@@ -13,12 +13,10 @@ def Info():
 	}
 
 def Register(app):
-	
-
-	logging.debug("Set script dir for web-modinfo to '%s'", webModinfoScriptDir)
-
-
 	app.OnStartup += OnAppStartup
+
+	global webModinfoScriptDir
+	webModinfoScriptDir = os.path.abspath(os.path.dirname(__file__))
 
 	
 
@@ -38,8 +36,6 @@ def GetmMenuTemplate(app,parameter):
 
 
 def RegisterModInfo(app, args):
-
-	webModinfoScriptDir = os.path.abspath(os.path.dirname(__file__))
 
 	# Get directories of required  files
 	webFolder = os.path.join(webModinfoScriptDir,"web/templates")

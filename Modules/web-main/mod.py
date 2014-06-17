@@ -16,15 +16,21 @@ def Info():
 
 def Register(app):
 
+	global webMainscripDir
+	webMainscripDir = os.path.dirname(__file__)
+
 	# Setup web events for other modules
 	app.SetAppComponent("WebHeaderRequested", Event())
 
 	app.RegisterAppCommand("GetWebTemplateParameter", GetWebTemplateParameter)
 
+	app.OnStartup += OnAppStarted
+
+
+def OnAppStarted(app,args):
 	# Register for server start event
 	runServerEvent = app.GetAppComponent("WebcodeStartet")
 	runServerEvent += ServerStarted
-
 
 def GetWebTemplateParameter(app):
 	logging.debug("Requested common web parameter")
@@ -41,7 +47,7 @@ def GetWebTemplateParameter(app):
 
 def ServerStarted(app, args):
 
-	webMainscripDir = os.path.dirname(__file__)
+	
 
 	# Get directories of required  files
 	webFolder = os.path.join(webMainscripDir,"web/webmain")
@@ -53,8 +59,6 @@ def ServerStarted(app, args):
 	app.GetAppComponent("WebFileManager").AddFolderStatic("webmain",staticsFolder)
 
 	app.GetAppComponent("WebFileManager").AddFile("",os.path.join(webMainscripDir,"web/template.html"))
-
-
 
 
 	flask = app.GetAppComponent("server")
