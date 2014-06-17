@@ -12,15 +12,14 @@ def Info():
 		"core": False
 	}
 
-scriptDir = ""
+webModinfoScriptDir = ""
 
 def Register(app):
 
+	global webModinfoScriptDir
+	webModinfoScriptDir = os.path.abspath(os.path.dirname(__file__))
 
-	global scriptDir
-	scriptDir = os.path.abspath(os.path.dirname(__file__))
-
-	logging.debug("Set script dir for web-modinfo to '%s'", scriptDir)
+	logging.debug("Set script dir for web-modinfo to '%s'", webModinfoScriptDir)
 
 
 	app.OnStartup += OnAppStartup
@@ -45,8 +44,8 @@ def GetmMenuTemplate(app,parameter):
 def RegisterModInfo(app, args):
 
 	# Get directories of required  files
-	webFolder = os.path.join(scriptDir,"web/templates")
-	staticsFolder = os.path.join(scriptDir,"web/static")
+	webFolder = os.path.join(webModinfoScriptDir,"web/templates")
+	staticsFolder = os.path.join(webModinfoScriptDir,"web/static")
 
 	# Copy template files of mudole to the server
 	app.GetAppComponent("WebFileManager").AddFolder("modinfo",webFolder)

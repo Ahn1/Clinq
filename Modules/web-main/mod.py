@@ -14,8 +14,12 @@ def Info():
 	}
 
 
+webMainscripDir = ""
 
 def Register(app):
+
+	global webMainscripDir
+	webMainscripDir = os.path.dirname(__file__)
 
 	# Setup web events for other modules
 	app.SetAppComponent("WebHeaderRequested", Event())
@@ -42,19 +46,16 @@ def GetWebTemplateParameter(app):
 
 def ServerStarted(app, args):
 
-	# Get directory of current module
-	scriptDir = os.path.dirname(__file__)
-
 	# Get directories of required  files
-	webFolder = os.path.join(scriptDir,"web/webmain")
-	staticsFolder = os.path.join(scriptDir,"web/static")
+	webFolder = os.path.join(webMainscripDir,"web/webmain")
+	staticsFolder = os.path.join(webMainscripDir,"web/static")
 
 	# Copy template files of mudole to the server
 	app.GetAppComponent("WebFileManager").AddFolder("webmain",webFolder)
 
 	app.GetAppComponent("WebFileManager").AddFolderStatic("webmain",staticsFolder)
 
-	app.GetAppComponent("WebFileManager").AddFile("",os.path.join(scriptDir,"web/template.html"))
+	app.GetAppComponent("WebFileManager").AddFile("",os.path.join(webMainscripDir,"web/template.html"))
 
 
 
