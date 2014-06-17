@@ -14,12 +14,7 @@ def Info():
 	}
 
 
-webMainscripDir = ""
-
 def Register(app):
-
-	global webMainscripDir
-	webMainscripDir = os.path.dirname(__file__)
 
 	# Setup web events for other modules
 	app.SetAppComponent("WebHeaderRequested", Event())
@@ -45,6 +40,8 @@ def GetWebTemplateParameter(app):
 	return parameter
 
 def ServerStarted(app, args):
+
+	webMainscripDir = os.path.dirname(__file__)
 
 	# Get directories of required  files
 	webFolder = os.path.join(webMainscripDir,"web/webmain")
