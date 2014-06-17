@@ -8,7 +8,8 @@ from mutagen.id3 import ID3
 def Info():
 	return {
 		"name": "handler_mp3",
-		"version": "0.2"
+		"version": "0.2",
+		"description": "Handler for MP3 tags",
 	}
 
 def Register(app):

@@ -6,6 +6,7 @@ def Info():
 	return {
 		"name": "ensure_folder",
 		"version": "0.1",
+		"description": "Register an app command, that ensures, that a folder exists.",
 		"core": True
 	}
 

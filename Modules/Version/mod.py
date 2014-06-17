@@ -4,6 +4,7 @@ def Info():
 	return {
 		"name": "version",
 		"version": "0.2",
+		"description": "'version' command for cli",
 		"core": True
 	}
 

@@ -8,7 +8,8 @@ from Lib.event import Event
 def Info():
 	return {
 		"name": "web-main",
-		"version": "0.1",
+		"version": "0.2",
+		"description": "Main module for webserver. Includes a startpage and the master page",
 		"core": False
 	}
 

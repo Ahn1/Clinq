@@ -9,6 +9,7 @@ def Info():
 	return {
 		"name": "indexing",
 		"version": "1.0",
+		"description": "Indexing for media files"
 	}
 
 def Register(app):

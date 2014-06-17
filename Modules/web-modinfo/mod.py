@@ -7,7 +7,8 @@ from flask import Flask, render_template, make_response
 def Info():
 	return {
 		"name": "web-modinfo",
-		"version": "0.2",
+		"version": "0.3",
+		"description": "Show a page on website which displays all active modules",
 		"core": False
 	}
 

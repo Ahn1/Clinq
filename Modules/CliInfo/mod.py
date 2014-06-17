@@ -8,6 +8,7 @@ def Info():
 	return {
 		"name": "cli_media_info",
 		"version": "0.4",
+		"description": "Displays media infos in cli",
 		"core": True
 	}
 

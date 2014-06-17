@@ -8,6 +8,7 @@ def Info():
 	return {
 		"name": "web-core",
 		"version": "0.1",
+		"description": "Core for the webserver. Required by every web module",
 		"core": False
 	}
 
