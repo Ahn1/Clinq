@@ -42,8 +42,7 @@ def RegisterModInfo(app, args):
 
 	# Copy template files of mudole to the server
 	app.GetAppComponent("WebFileManager").AddFolder("modinfo",webFolder)
-
-	app.GetAppComponent("WebFileManager").AddFolderStatic("modinfo",staticsFolder)
+	
 
 	flask = app.GetAppComponent("server")
 
