@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"web",
+				"web-category"
+			],
+			[
 				"par",
 				"parameter"
 			],
@@ -128,10 +132,10 @@
 	"buffers":
 	[
 		{
-			"file": "config.py",
+			"file": "Modules/web-modinfo/mod.py",
 			"settings":
 			{
-				"buffer_size": 304,
+				"buffer_size": 1715,
 				"line_ending": "Unix"
 			}
 		}
@@ -163,16 +167,24 @@
 	},
 	"file_history":
 	[
+		"/home/alex/Dokumente/Entwicklung/Clinq/project.sublime-project",
 		"/home/alex/Dokumente/Entwicklung/Clinq/config.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web_category/webcategory.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/web/local/en.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web_category/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/clinq.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-category/webcategory.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-category/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-category/__init__.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-modinfo/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/mod.py",
+		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Webcore/mod.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/CliInfo/mod.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/EnsureFolder/mod.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Handler_Mp3/mod.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Indexing/mod.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/ModelMongo/mod.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Version/mod.py",
-		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Webcore/mod.py",
-		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/mod.py",
-		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-modinfo/mod.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-modinfo/web/templates/modinfo.html",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/web/template.html",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Lib/ModulLoader.py",
@@ -184,13 +196,11 @@
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/web/static/bootstrap/css/bootstrap.min.css",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/web/static/Glyphicon/css/glyph.css",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Webcore/WebFileManager.py",
-		"/home/alex/Dokumente/Entwicklung/Clinq/project.sublime-project",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Handler_Mp3/__init__.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/web-main/__init__.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Webcore/__init__.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/config.pyc",
 		"/home/alex/Dokumente/Entwicklung/Clinq/clinq.log",
-		"/home/alex/Dokumente/Entwicklung/Clinq/clinq.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/Modules/Indexing/__init__.py",
 		"/home/alex/Dokumente/Entwicklung/Clinq/README.md",
 		"/home/alex/Dokumente/Entwicklung/Clinq/LICENSE",
@@ -253,27 +263,28 @@
 			[
 				{
 					"buffer": 0,
-					"file": "config.py",
+					"file": "Modules/web-modinfo/mod.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 304,
+						"buffer_size": 1715,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								304,
-								304
+								1714,
+								1714
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 712.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

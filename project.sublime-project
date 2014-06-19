@@ -15,7 +15,7 @@
             //"working_dir": "/home/alex/Dokumente/Entwicklung/Clinq",
 
             "shell_cmd": "/home/alex/Dokumente/Entwicklung/Clinq/clinq.py server",
-            "working_dir": "/home/alex/fusessh/Jukebox"
+            "working_dir": "/home/alex/"
 
             //"shell_cmd": "/home/alex/Dokumente/Entwicklung/Clinq/clinq.py indexing",
             //"working_dir": "/home/alex/fusessh/Jukebox"

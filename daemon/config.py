@@ -16,5 +16,5 @@ modules = [
 
 	"handler_mp3",
 
-	"web-core", "web-main", "web-modinfo"
+	"web-core", "web-main", "web-modinfo", 
 ]

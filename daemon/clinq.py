@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.DEBUG,
                     filemode='w')
 # define a Handler which writes INFO messages or higher to the sys.stderr
 console = logging.StreamHandler()
-console.setLevel(logging.DEBUG)
+console.setLevel(logging.WARNING)
 # set a format which is mpler for console use
 formatter = logging.Formatter('%(levelname)s %(message)s')
 # tell the handler to use this format
