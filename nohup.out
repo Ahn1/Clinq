@@ -1,0 +1,124 @@
+DEBUG Init ClinqApp
+INFO Load config file
+DEBUG SCRIPT DIR: /var/Clinq
+INFO Starting to import modules
+INFO Importing module /var/Clinq/Modules/Version
+DEBUG Importing main file /var/Clinq/Modules/Version/mod.py
+DEBUG Register module 'version 0.2'
+DEBUG Registered command: version
+INFO Importing module /var/Clinq/Modules/EnsureFolder
+DEBUG Importing main file /var/Clinq/Modules/EnsureFolder/mod.py
+DEBUG Register module 'ensure_folder 0.1'
+DEBUG Register App Command: EnsureFolder
+DEBUG Register App Command: EnsureLocalFolder
+INFO Importing module /var/Clinq/Modules/web-main
+DEBUG Importing main file /var/Clinq/Modules/web-main/mod.py
+DEBUG Register module 'web-main 0.1'
+DEBUG Register App Command: GetWebTemplateParameter
+INFO Importing module /var/Clinq/Modules/CliInfo
+DEBUG Importing main file /var/Clinq/Modules/CliInfo/mod.py
+DEBUG Register module 'cli_media_info 0.4'
+DEBUG Registered command: info
+INFO Importing module /var/Clinq/Modules/Webcore
+DEBUG Importing main file /var/Clinq/Modules/Webcore/mod.py
+DEBUG Register module 'web-core 0.1'
+DEBUG Create Web File manager on '/tmp/clinq/webserver'
+INFO Creating web dir '/tmp/clinq/webserver'
+INFO Creating web static dir '/tmp/clinq/webserver-static'
+DEBUG Init flask with template folder '/tmp/clinq/webserver/' and static folder '/tmp/clinq/webserver-static/'
+DEBUG Registered command: server
+INFO Importing module /var/Clinq/Modules/Indexing
+DEBUG Importing main file /var/Clinq/Modules/Indexing/mod.py
+DEBUG Register module 'indexing 1.0'
+DEBUG Register App Command: StartCompleteIndexing
+DEBUG Registered command: indexing
+INFO Importing module /var/Clinq/Modules/ModelMongo
+DEBUG Importing main file /var/Clinq/Modules/ModelMongo/mod.py
+DEBUG Register module 'backend_mongo 0.4'
+DEBUG Init MongoClinq Database
+INFO Importing module /var/Clinq/Modules/Handler_Mp3
+DEBUG Importing main file /var/Clinq/Modules/Handler_Mp3/mod.py
+DEBUG Register module 'handler_mp3 0.2'
+DEBUG Register Tag Handler
+INFO Importing module /var/Clinq/Modules/web-modinfo
+DEBUG Importing main file /var/Clinq/Modules/web-modinfo/mod.py
+DEBUG Register module 'web-modinfo 0.2'
+DEBUG Set script dir for web-modinfo to '/var/Clinq/Modules/web-modinfo'
+DEBUG Register App Command: GetActiveModules
+INFO Start runing app
+DEBUG Raise Startup event
+DEBUG Creating Mogno Client
+INFO Connecting to Mongod: mongodb://localhost:27017/
+DEBUG Creating main collection in mongodb
+INFO Execute command 'server'
+DEBUG Raise Webcode Started event
+DEBUG Try to copy '/var/Clinq/Modules/web-main/web/webmain' to '/tmp/clinq/webserver/webmain'
+DEBUG Try to copy '/var/Clinq/Modules/web-main/web/static' to '/tmp/clinq/webserver-static/webmain'
+DEBUG Try to copy '/var/Clinq/Modules/web-main/web/template.html' to '/tmp/clinq/webserver/'
+DEBUG Try to copy '/var/Clinq/Modules/web-modinfo/web/templates' to '/tmp/clinq/webserver/modinfo'
+INFO Start running server
+INFO  * Running on http://0.0.0.0:5000/
+/var/Clinq/Modules/web-main
+DEBUG Init ClinqApp
+INFO Load config file
+DEBUG SCRIPT DIR: /var/Clinq
+INFO Starting to import modules
+INFO Importing module /var/Clinq/Modules/Version
+DEBUG Importing main file /var/Clinq/Modules/Version/mod.py
+DEBUG Register module 'version 0.2'
+DEBUG Registered command: version
+INFO Importing module /var/Clinq/Modules/EnsureFolder
+DEBUG Importing main file /var/Clinq/Modules/EnsureFolder/mod.py
+DEBUG Register module 'ensure_folder 0.1'
+DEBUG Register App Command: EnsureFolder
+DEBUG Register App Command: EnsureLocalFolder
+INFO Importing module /var/Clinq/Modules/web-main
+DEBUG Importing main file /var/Clinq/Modules/web-main/mod.py
+DEBUG Register module 'web-main 0.1'
+DEBUG Register App Command: GetWebTemplateParameter
+INFO Importing module /var/Clinq/Modules/CliInfo
+DEBUG Importing main file /var/Clinq/Modules/CliInfo/mod.py
+DEBUG Register module 'cli_media_info 0.4'
+DEBUG Registered command: info
+INFO Importing module /var/Clinq/Modules/Webcore
+DEBUG Importing main file /var/Clinq/Modules/Webcore/mod.py
+DEBUG Register module 'web-core 0.1'
+DEBUG Create Web File manager on '/tmp/clinq/webserver'
+INFO Creating web dir '/tmp/clinq/webserver'
+INFO Creating web static dir '/tmp/clinq/webserver-static'
+DEBUG Init flask with template folder '/tmp/clinq/webserver/' and static folder '/tmp/clinq/webserver-static/'
+DEBUG Registered command: server
+INFO Importing module /var/Clinq/Modules/Indexing
+DEBUG Importing main file /var/Clinq/Modules/Indexing/mod.py
+DEBUG Register module 'indexing 1.0'
+DEBUG Register App Command: StartCompleteIndexing
+DEBUG Registered command: indexing
+INFO Importing module /var/Clinq/Modules/ModelMongo
+DEBUG Importing main file /var/Clinq/Modules/ModelMongo/mod.py
+DEBUG Register module 'backend_mongo 0.4'
+DEBUG Init MongoClinq Database
+INFO Importing module /var/Clinq/Modules/Handler_Mp3
+DEBUG Importing main file /var/Clinq/Modules/Handler_Mp3/mod.py
+DEBUG Register module 'handler_mp3 0.2'
+DEBUG Register Tag Handler
+INFO Importing module /var/Clinq/Modules/web-modinfo
+DEBUG Importing main file /var/Clinq/Modules/web-modinfo/mod.py
+DEBUG Register module 'web-modinfo 0.2'
+DEBUG Set script dir for web-modinfo to '/var/Clinq/Modules/web-modinfo'
+DEBUG Register App Command: GetActiveModules
+INFO Start runing app
+DEBUG Raise Startup event
+DEBUG Creating Mogno Client
+INFO Connecting to Mongod: mongodb://localhost:27017/
+DEBUG Creating main collection in mongodb
+INFO Execute command 'server'
+DEBUG Raise Webcode Started event
+DEBUG Try to copy '/var/Clinq/Modules/web-main/web/webmain' to '/tmp/clinq/webserver/webmain'
+DEBUG Try to copy '/var/Clinq/Modules/web-main/web/static' to '/tmp/clinq/webserver-static/webmain'
+DEBUG Try to copy '/var/Clinq/Modules/web-main/web/template.html' to '/tmp/clinq/webserver/'
+DEBUG Try to copy '/var/Clinq/Modules/web-modinfo/web/templates' to '/tmp/clinq/webserver/modinfo'
+INFO Start running server
+INFO  * Running on http://0.0.0.0:5000/
+DEBUG Requested common web parameter
+DEBUG Web parameters are: {'availible': 'True', 'menuTemplates': ["<a href='/modinfo' class='element'>Modinfo</a>"]}
+INFO 37.5.67.131 - - [17/Jun/2014 10:28:13] "GET /modinfo HTTP/1.1" 200 -
