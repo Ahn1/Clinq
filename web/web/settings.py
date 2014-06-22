@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for web project.
 
@@ -17,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'hz9zky164bs3y#p+-cyubufanmbt465u7*ib_e*&rd9i_ucg)f'
+SECRET_KEY = 'dmn20z1#k%n(w3odi6*c+q7d3)vxsz4w%k7n=dq&0pi&pwg54@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'polls'
+    'clinq'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,10 +58,10 @@ WSGI_APPLICATION = 'web.wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
-    'default' : {
-      'ENGINE' : 'django.db.backends.sqlite3',
-      'NAME' : os.path.join(BASE_DIR, 'db.sqlite3')
-   }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 # Internationalization
@@ -81,3 +82,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+MEDIA_PATH = '/home/alex/fusessh/Hörbücher'
