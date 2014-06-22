@@ -14,6 +14,12 @@ def Home(request):
 	return render(request, 'home.html', None)
 
 
+def audio_by_Artists(request):
+	groupes = model.AudioFile.objects.order_by("artist").values("artist").annotate(totalLength=Sum('length'))
+
+	return render(request, 'musik_by_artist.html', {"artists": groupes})
+
+
 def list_albums(request):
 	
 	def getAllAlbums():

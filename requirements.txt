@@ -2,3 +2,4 @@ pymongo
 mutagen
 django
 gunicorn
+django-mathfilters

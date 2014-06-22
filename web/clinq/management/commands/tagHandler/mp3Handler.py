@@ -24,7 +24,12 @@ class HandlerMp3:
 			target.title = self.get_first(title)
 			target.artist = self.get_first(artist,artist)
 			target.album = self.get_first(album,album)
-			target.track = self.get_first(track,track)
+
+			try:
+				target.track = self.get_first(track,track)
+			except Exception, e:
+				target.track = "0"
+			
 
 
 			audio = MP3(media)

@@ -1,0 +1,22 @@
+{% extends "master.html" %}
+
+{% load timeformat %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+	{% for art in artists %}
+		<a href="/?artist={{ art.artist }}" class="four columns Tile"><div>{{ art.artist }}<br />{{ art.totalLength|dispalayTime }} hours</div></a>
+
+		{% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+
+	{% endfor %}
+</div>
+
+
+
+{% endblock %}

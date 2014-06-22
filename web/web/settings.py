@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'clinq',
-    'gunicorn'
+    'gunicorn',
+    'mathfilters'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -85,4 +86,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-MEDIA_PATH = '/home/alex/fusessh/Hörbücher'
+MEDIA_PATH = '/home/alex/fusessh'

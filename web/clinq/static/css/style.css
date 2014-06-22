@@ -1,1 +1,7 @@
 
+
+.Tile{
+	border: 1px solid gray;
+	margin-bottom: 10px;
+	min-height: 38px;
+}
