@@ -39,28 +39,35 @@ class Command(BaseCommand):
 
 
 	def IndexFile(self, path):
-		fileName, fileExtension = os.path.splitext(path)
+		try:
+			fileName, fileExtension = os.path.splitext(path)
 
-		relPath = os.path.relpath(path,settings.MEDIA_PATH)
+			relPath = os.path.relpath(path,settings.MEDIA_PATH)
 
 
-		dbObj = None
-		if model.File.objects.filter(path=relPath).count() == 0:
-			dbObj = model.File()
-			dbObj.path = relPath
-		else:
-			dbObj = model.File.objects.filter(path=relPath)[:1][0]
+			dbObj = None
+			if model.File.objects.filter(path=relPath).count() == 0:
+				dbObj = model.File()
+				dbObj.path = relPath
+			else:
+				dbObj = model.File.objects.filter(path=relPath)[:1][0]
 
-		lastEditTime = os.stat(path).st_mtime
+			lastEditTime = os.stat(path).st_mtime
 
-		if dbObj.changeDate < lastEditTime:
+			if dbObj.changeDate < lastEditTime:
 
-			dbObj.changeDate = lastEditTime
+				dbObj.changeDate = lastEditTime
 
-			dbObj.save()
+				dbObj.save()
 
-			if fileExtension in [".mp3"]:
-				self.HandleAudioFile(path, dbObj)
+				if fileExtension in [".mp3"]:
+					self.HandleAudioFile(path, dbObj)
+			else:
+				print("Skip file '%s'" % path)
+
+
+		except Exception, e:
+			print e
 
 
 	def HandleAudioFile(self, path, refdbFile):

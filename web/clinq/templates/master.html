@@ -1,0 +1,50 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Clinq</title>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/libs/modernizr-2.6.2.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/libs/gumby.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/libs/gumby.init.js' %}"></script>
+
+
+	<link rel="stylesheet" href="{% static 'css/gumby.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/gumby.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+	{% block head %}
+
+	{% endblock %}
+</head>
+
+
+<body>
+	<nav id="navbar-main-nav" class="navbar">
+		<div class="row navbar" id="nav1">
+			<a class="toggle" gumby-trigger="#nav1 > ul" href="#"><i class="icon-menu"></i></a>
+			<ul class="eight columns">
+				<li><a href="#">Home</a></li>
+				<li>
+					<a href="#">Musik</a>
+					<div class="dropdown">
+						<ul>
+							<li><a href="#">By artist</a></li>
+							<li><a href="#">By Album</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#">Customize</a></li>
+			</ul>
+		</div>
+	</nav>
+
+
+	<div id="content">
+		{% block content %}{% endblock %}
+	</div>
+</body>
+</html>
