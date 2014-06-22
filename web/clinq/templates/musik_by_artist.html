@@ -1,6 +1,7 @@
 {% extends "master.html" %}
 
 {% load timeformat %}
+{% load clinqformats %}
 
 {% block head %}
 
@@ -10,7 +11,15 @@
 
 <div class="row">
 	{% for art in artists %}
-		<a href="/?artist={{ art.artist }}" class="four columns Tile"><div>{{ art.artist }}<br />{{ art.totalLength|dispalayTime }} hours</div></a>
+		<div class="four columns Tile ttip"><a href="/?artist={{ art.artist|HexEncode }}" data-tooltip="{{ art.artist }}" >
+		<div><span>{{ art.artist }}</span><br />{{ art.totalLength|dispalayTime }} hours
+
+
+		<div class="Image">
+
+		</div>
+
+		</div></a></div>
 
 		{% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
 

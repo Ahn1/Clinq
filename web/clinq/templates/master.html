@@ -13,7 +13,6 @@
 
 
 	<link rel="stylesheet" href="{% static 'css/gumby.css' %}" />
-	<link rel="stylesheet" href="{% static 'css/gumby.css' %}" />
 	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
 	{% block head %}
@@ -25,7 +24,7 @@
 <body>
 	<nav id="navbar-main-nav" class="navbar">
 		<div class="row navbar" id="nav1">
-			<a class="toggle" gumby-trigger="#nav1 > ul" href="#"><i class="icon-menu"></i></a>
+			<a class="toggle" gumby-trigger="#navbar-main-nav #main-nav" href="#"><i class="icon-menu"></i></a>
 			<h1 class="four columns logo">
 				<a href="/">
 					<img src="{% static 'img/logo.png' %}" gumby-retina />
@@ -37,8 +36,8 @@
 					<a href="#">Musik</a>
 					<div class="dropdown">
 						<ul>
-							<li><a href="/musik/Artist">By artist</a></li>
-							<li><a href="#">By album</a></li>
+							<li><a href="/musik/Artist"><i class="icon-users"></i> By artist</a></li>
+							<li><a href="#"><i class="icon-folder"></i> By album</a></li>
 						</ul>
 					</div>
 				</li>
