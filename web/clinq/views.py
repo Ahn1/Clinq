@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 import clinq.models as model
 
 from django.http import HttpResponse, StreamingHttpResponse
@@ -50,5 +50,5 @@ def getArtistImage(request, artistHex):
 		resp["Cache-Control"] = "public, max-age=31536000"
 		return resp
 
-	return HttpResponse("NoImage")
+	return redirect("/static/img/nocover.png")
 
