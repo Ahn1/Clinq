@@ -2,8 +2,11 @@
 
 {% load timeformat %}
 {% load clinqformats %}
+{% load staticfiles %}
 
 {% block head %}
+
+<script type="text/javascript" src="{% static 'js/jquery.lazyload.js' %}"></script>
 
 {% endblock %}
 
@@ -15,7 +18,7 @@
 		<div><span>{{ art.artist }}</span><br />{{ art.totalLength|dispalayTime }} hours
 
 
-		<div class="Image" style="background-image: url('/artistImage/{{ art.artist|HexEncode }}/');">
+		<div class="Image lazy" style="background-image: url('');" data-original="/artistImage/{{ art.artist|HexEncode }}/">
 
 		</div>
 
@@ -25,6 +28,17 @@
 
 	{% endfor %}
 </div>
+
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$("div.lazy").lazyload({
+			effect : "fadeIn"
+		});
+	})
+
+</script>
 
 
 
