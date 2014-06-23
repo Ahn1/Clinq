@@ -11,11 +11,11 @@
 
 <div class="row">
 	{% for art in artists %}
-		<div class="four columns Tile ttip"><a href="/?artist={{ art.artist|HexEncode }}" data-tooltip="{{ art.artist }}" >
+		<div class="four columns Tile ttip" data-tooltip="{{ art.artist }}"><a href="/?artist={{ art.artist|HexEncode }}" >
 		<div><span>{{ art.artist }}</span><br />{{ art.totalLength|dispalayTime }} hours
 
 
-		<div class="Image">
+		<div class="Image" style="background-image: url('/artistImage/{{ art.artist|HexEncode }}/');">
 
 		</div>
 

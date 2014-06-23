@@ -3,6 +3,12 @@ import os
 from mutagen.easyid3 import EasyID3
 from mutagen.mp3 import MP3
 from mutagen.id3 import ID3
+from mutagen import File
+
+import string
+import random
+
+import mimetypes
 
 
 
@@ -32,9 +38,24 @@ class HandlerMp3:
 			
 
 
-			audio = MP3(media)
+			audio = File(media)
 
 			target.length = audio.info.length
+
+			try:
+				artwork = audio.tags['APIC:']
+				extension = getExtensionFromMime(artwork.mime)
+
+				print "Cover mime: " + artwork.mime
+				print "Guess extension: " + extension
+
+				target.setCover(artwork.data, id_generator() + extension)
+				target.coverMime = artwork.mime
+
+
+			except Exception, e:
+				print ("Cannot Handle cover: %s" % e)
+			
 
 			logging.debug("Tag of '%s' refreshed: %s",media,target)
 			
@@ -53,3 +74,13 @@ class HandlerMp3:
 			for item in iterable:
 				return item
 		return default
+
+
+
+def getExtensionFromMime(mime):
+	return mimetypes.guess_extension(mime)
+
+def id_generator(size=8, chars=string.ascii_uppercase + string.digits):
+	return ''.join(random.choice(chars) for _ in range(size))
+
+	

@@ -38,3 +38,16 @@ def list_artists(request):
 
 	resp = StreamingHttpResponse( getAllArtists(), mimetype='text/plain')
 	return resp
+
+def getArtistImage(request, artistHex):
+
+	artist = artistHex.decode("hex")
+
+	dbObj = list(model.AudioFile.objects.filter(artist__exact=artist)[0:1])[0]
+
+	if dbObj.cover:
+		resp = HttpResponse(dbObj.cover, content_type = dbObj.coverMime)
+		return resp
+
+	return HttpResponse("NoImage")
+

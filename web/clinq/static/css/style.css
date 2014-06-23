@@ -3,7 +3,7 @@
 .Tile{
 	border: 1px solid #B3B3B3;
 	margin-bottom: 10px;
-	min-height: 38px;
+	min-height: 100px;
 	padding: 8px;
 	position: relative;
 	box-sizing:border-box;
@@ -15,13 +15,22 @@
 
 
 .Tile .Image{
+
+
 	position: absolute;
 	height: 100%;
 	width: 6em;
 	background-color: gray;
 	right:0px;
 	top: 0px;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 }
+
+
+
 
 
 .Tile span{

@@ -87,3 +87,7 @@ STATIC_URL = '/static/'
 
 
 MEDIA_PATH = '/home/alex/fusessh'
+
+
+MEDIA_ROOT = '/tmp/clinqMedia'
+MEDIA_URL = '/media/'
