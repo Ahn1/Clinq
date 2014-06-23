@@ -46,7 +46,8 @@ def getArtistImage(request, artistHex):
 	dbObj = list(model.AudioFile.objects.filter(artist__exact=artist)[0:1])[0]
 
 	if dbObj.cover:
-		resp = HttpResponse(dbObj.cover, content_type = dbObj.coverMime)
+		resp = HttpResponse(dbObj.cover, mimetype = dbObj.coverMime)
+		resp["Cache-Control"] = "public, max-age=31536000"
 		return resp
 
 	return HttpResponse("NoImage")
